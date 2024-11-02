@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 02, 2024 at 06:33 AM
+-- Generation Time: Nov 02, 2024 at 06:44 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -117,8 +117,8 @@ CREATE TABLE `t_admins` (
 --
 
 INSERT INTO `t_admins` (`f_id`, `f_nama`, `f_username`, `f_password`, `f_level`, `f_status`) VALUES
-(1, 'admin', 'admin', '$2y$10$cIci15F0CCD5Tw8FuIIM0OQ99Fu1A/Woona6AUShLLJi4BxYqElku', 'Admin', 'Aktif'),
-(2, 'pustakawan', 'pustakawan', '$2y$10$qJBgRqPUpHbr4MPbhD5Vc.uG.SvebOxjC9CDr9Gak66.TuO0wGx0i', 'Pustakawan', 'Aktif');
+(1, 'admin', 'admin', '$2y$10$xFIulgzcf0JeBmsbZ5aBMO96TnbgrABgiRE5Ynw2nhA.jQQBpRo7a', 'Admin', 'Aktif'),
+(2, 'pustakawan', 'pustakawan', '$2y$10$IpddTjjZW4t1naN6Mn163ekrVoXjQss6QPHoVUqYAhPChVz4Zk1pK', 'Pustakawan', 'Aktif');
 
 -- --------------------------------------------------------
 
@@ -140,7 +140,7 @@ CREATE TABLE `t_anggotas` (
 --
 
 INSERT INTO `t_anggotas` (`f_id`, `f_nama`, `f_username`, `f_password`, `f_tempatlahir`, `f_tanggallahir`) VALUES
-(1, 'Andi', 'Andi', '$2y$10$0nmMDYjwlq3Uh0iYzJJWD.C.HUiuBk7wSNNFrY9/sb1OQHG5QIwLO', 'Cipinang, Jakarta', '2004-02-13');
+(1, 'anggota', 'anggota', '$2y$10$hy0bhn4lYOaiL/5lgyjHT.f0rw35gnVSUTYBrE3qokTMrIUWAho/.', 'Cipinang, Jakarta', '2004-02-13');
 
 -- --------------------------------------------------------
 
@@ -162,7 +162,7 @@ CREATE TABLE `t_bukus` (
 --
 
 INSERT INTO `t_bukus` (`f_id`, `f_idkategori`, `f_judul`, `f_pengarang`, `f_penerbit`, `f_deskripsi`) VALUES
-(1, 1, 'Matematika', 'Aviscenna Venra', 'Arga Tilanta', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit illum alias dignissimos cumque eaque tenetur possimus molestias cupiditate, aspernatur excepturi delectus illo obcaecati quibusdam odio quidem cum eveniet deserunt quos.');
+(1, 1, 'Matematika', 'anonim', 'anonim', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit illum alias dignissimos cumque eaque tenetur possimus molestias cupiditate, aspernatur excepturi delectus illo obcaecati quibusdam odio quidem cum eveniet deserunt quos.');
 
 -- --------------------------------------------------------
 

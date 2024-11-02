@@ -44,9 +44,9 @@ class DatabaseSeeder extends Seeder
         
         T_anggota::create([
             "f_id" => 1,
-            "f_nama" => 'Andi',
-            "f_username" => 'Andi',
-            "f_password" => Hash::make('rahasia'),
+            "f_nama" => 'anggota',
+            "f_username" => 'anggota',
+            "f_password" => Hash::make('anggota'),
             "f_tempatlahir" => 'Cipinang, Jakarta',
             "f_tanggallahir" => Carbon::createFromFormat('Y-m-d', '2004-02-13'),
         ]);
@@ -70,8 +70,8 @@ class DatabaseSeeder extends Seeder
             "f_id" => 1,
             "f_idkategori" => 1,
             "f_judul" => 'Matematika',
-            "f_pengarang" => "Aviscenna Venra",
-            "f_penerbit" => "Arga Tilanta",
+            "f_pengarang" => "anonim",
+            "f_penerbit" => "anonim",
             "f_deskripsi" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit illum alias dignissimos cumque eaque tenetur possimus molestias cupiditate, aspernatur excepturi delectus illo obcaecati quibusdam odio quidem cum eveniet deserunt quos."
         ]);
 
