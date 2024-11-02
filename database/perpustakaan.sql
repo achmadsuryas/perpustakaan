@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 26, 2024 at 08:00 AM
+-- Generation Time: Nov 02, 2024 at 06:33 AM
 -- Server version: 8.0.30
--- PHP Version: 8.3.1
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `usk_perpustakaan`
+-- Database: `perpustakaan`
 --
 
 -- --------------------------------------------------------
@@ -61,7 +61,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (5, '2024_03_18_015333_create_t_anggotas_table', 1),
 (6, '2024_04_17_013134_create_t_kategoris_table', 1),
 (7, '2024_04_18_014343_create_t_admins_table', 1),
-(8, '2024_04_18_035342_create_t_bukus_table', 1),
+(8, '2024_04_18_035342_create_t_buku_table', 1),
 (9, '2024_04_19_013849_create_t_peminjamans_table', 1),
 (10, '2024_04_21_061722_create_t_detailbukus_table', 1),
 (11, '2024_04_21_113017_create_t_detailpeminjamans_table', 1);
@@ -117,8 +117,8 @@ CREATE TABLE `t_admins` (
 --
 
 INSERT INTO `t_admins` (`f_id`, `f_nama`, `f_username`, `f_password`, `f_level`, `f_status`) VALUES
-(1, 'Budi', 'Budi', '$2y$10$yompkXwyLa8FARXiy/WIle1fVfS/yNkOQ4yTEHGk5WUGCipYoMY4S', 'Admin', 'Aktif'),
-(2, 'pustakawan1', 'pustakawan1', '$2y$10$QkwH1NMime5RBuEJwnrMPe41c2.OoZb3jhXvNQihnfdB3DJv.rnEu', 'Pustakawan', 'Aktif');
+(1, 'admin', 'admin', '$2y$10$cIci15F0CCD5Tw8FuIIM0OQ99Fu1A/Woona6AUShLLJi4BxYqElku', 'Admin', 'Aktif'),
+(2, 'pustakawan', 'pustakawan', '$2y$10$qJBgRqPUpHbr4MPbhD5Vc.uG.SvebOxjC9CDr9Gak66.TuO0wGx0i', 'Pustakawan', 'Aktif');
 
 -- --------------------------------------------------------
 
@@ -140,8 +140,7 @@ CREATE TABLE `t_anggotas` (
 --
 
 INSERT INTO `t_anggotas` (`f_id`, `f_nama`, `f_username`, `f_password`, `f_tempatlahir`, `f_tanggallahir`) VALUES
-(1, 'fadli', 'fadli', '$2y$10$SNqeS.KT2IZSGw7PawTPf.QOntdX8YYn7B9OL2p6UhEdfZFRkC25i', 'Cawang, Jakarta', '2006-03-13'),
-(2, 'Andi', 'Andi', '$2y$10$PAJ6b/8p1yoDGbbFjDf12u7.nOGHWyZ1C4N17oEhgV1RHTABBufke', 'Cipinang, Jakarta', '2004-02-13');
+(1, 'Andi', 'Andi', '$2y$10$0nmMDYjwlq3Uh0iYzJJWD.C.HUiuBk7wSNNFrY9/sb1OQHG5QIwLO', 'Cipinang, Jakarta', '2004-02-13');
 
 -- --------------------------------------------------------
 
@@ -174,6 +173,7 @@ INSERT INTO `t_bukus` (`f_id`, `f_idkategori`, `f_judul`, `f_pengarang`, `f_pene
 CREATE TABLE `t_detailbukus` (
   `f_id` bigint UNSIGNED NOT NULL,
   `f_idbuku` bigint UNSIGNED NOT NULL,
+  `f_stok` int NOT NULL,
   `f_status` enum('Tersedia','Tidak Tersedia') COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -181,8 +181,8 @@ CREATE TABLE `t_detailbukus` (
 -- Dumping data for table `t_detailbukus`
 --
 
-INSERT INTO `t_detailbukus` (`f_id`, `f_idbuku`, `f_status`) VALUES
-(1, 1, 'Tersedia');
+INSERT INTO `t_detailbukus` (`f_id`, `f_idbuku`, `f_stok`, `f_status`) VALUES
+(1, 1, 3, 'Tersedia');
 
 -- --------------------------------------------------------
 
@@ -365,7 +365,7 @@ ALTER TABLE `t_admins`
 -- AUTO_INCREMENT for table `t_anggotas`
 --
 ALTER TABLE `t_anggotas`
-  MODIFY `f_id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `f_id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `t_bukus`

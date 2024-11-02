@@ -12,13 +12,6 @@
                         &copy; achmadsurya.my.id
                     </h1>
                 </a>
-                <br>
-                <div class="mt-8 flex flex-wrap justify-center gap-4">
-                    <a class="block w-full rounded bg-white px-12 py-3 text-lg font-medium text-red-700 sm:w-auto"
-                        href="{{ route('listbook') }}">
-                        Buku
-                    </a>
-                </div>
             </div>
         </div>
     </section>
